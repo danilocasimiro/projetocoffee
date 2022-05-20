@@ -30,7 +30,7 @@ class RegistersController < ApplicationController
 
   def load_user
     @user = User.new
-    @user.name = params['name']
+    @user.nome = params['name']
     @user.email = params['email']
     @user.password = params['password']
 
