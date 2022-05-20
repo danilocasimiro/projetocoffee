@@ -1,0 +1,23 @@
+<% flash.each do |type, msg| %>
+  <% if type == "notice" %>
+    <div class="alert alert-success">
+  <% elsif type == "alert" %>
+    <div class="alert alert-danger">
+  <% else %>
+    <div class='alert alert-<%= "#{type}" %>'>
+  <% end %>
+      <%= msg %>
+      <% msg.clear %>
+    </div>
+<% end %>
+
+<div class="card" style="max-width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title">Olá, <%= session[:current_user_name] %></h5>
+    <p class="card-text">Abaixo estão os seus dados de localização neste momento.</p>
+    <%= render 'localization_table' %>
+  </div>
+  <div class="card-body">
+    <p><%= link_to 'Finalizar sessão', destroy_login_index_path, method: :delete %></p>
+  </div>
+</div>

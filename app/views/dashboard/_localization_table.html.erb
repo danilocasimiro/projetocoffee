@@ -1,0 +1,46 @@
+<% if @localization.present? && @localization['city'].present? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        IP:
+      </div>
+      <div class="col-sm">
+        <%= @localization['ip'] %> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        Cidade:
+      </div>
+      <div class="col-sm">
+        <%= @localization['city'] %> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        Estado:
+      </div>
+      <div class="col-sm">
+        <%= @localization['region'] %> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        País:
+      </div>
+      <div class="col-sm">
+        <%= @localization['country'] %> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        Timezone:
+      </div>
+      <div class="col-sm">
+        <%= @localization['timezone'] %> 
+      </div>
+    </div>
+  </div>
+<% else %>
+  <p>Não foi possivel encontrar sua localização.</p>
+<% end %>
