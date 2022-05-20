@@ -11,13 +11,13 @@
     </div>
 <% end %>
 
-<div class="card" style="max-width: 20rem;">
+<div class="card mx-auto mt-5" style="max-width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Olá, <%= session[:current_user_name] %></h5>
     <p class="card-text">Abaixo estão os seus dados de localização neste momento.</p>
     <%= render 'localization_table' %>
   </div>
-  <div class="card-body">
+  <div class="card-body text-center">
     <p><%= link_to 'Finalizar sessão', destroy_login_index_path, method: :delete %></p>
   </div>
 </div>

@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6 text-black">
-        <%= session[:users] %>
         <% flash.each do |type, msg| %>
           <% if type == "notice" %>
             <div class="alert alert-success">

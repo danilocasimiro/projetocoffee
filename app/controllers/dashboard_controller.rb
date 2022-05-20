@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
   require 'rest-client'
   
   def index
-    @localization = JSON.parse(RestClient.get("http://ipinfo.io/187.18.83.67/geo", headers={}))
+    @localization = JSON.parse(RestClient.get("http://ipinfo.io/#{request.remote_ip}/geo", headers={}))
   end
 
   private
