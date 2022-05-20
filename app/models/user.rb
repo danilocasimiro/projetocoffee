@@ -8,7 +8,6 @@ class User
   validates :password, length: { minimum: 10, maximum: 128 }
   validates :email, format: { with: /\A[a-zA-Z0-9_\W]{0,63}@[a-zA-Z0-9.-]*${0,128}\z/,
     message: "is invalid" }
-
   validate :password_validation
 
   private
