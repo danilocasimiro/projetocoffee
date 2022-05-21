@@ -17,7 +17,7 @@ class RegistersController < ApplicationController
 
       insert_user_in_current_session
 
-      redirect_to login_index_path
+      redirect_to(login_index_path, { flash: { notice: "Cadastro realizado com sucesso!" } } )
     end
   end
 
@@ -30,7 +30,7 @@ class RegistersController < ApplicationController
 
   def load_user
     @user = User.new
-    @user.nome = params['name']
+    @user.name = params['name']
     @user.email = params['email']
     @user.password = params['password']
 

@@ -1,0 +1,17 @@
+pt-BR:
+  activemodel:
+    attributes:
+      user:
+        name: 'Nome'
+        email: 'Email'
+        password: 'Senha'
+    
+  errors:
+    is_required: 'é obrigatório'
+    user_name_range: 'precisa ter entre 5 à 128 caracteres'
+    user_password_range: 'precisa ter entre 10 à 128 caracteres'
+    is_not_valid: 'não é valido'
+    user_password_at_leat_two_lowercase: ' deve conter pelo menos duas letras minúsculas'
+    user_password_at_leat_two_uppercase: ' deve conter pelo menos duas letras maiúsculas'
+    user_password_at_leat_two_digits: ' deve conter pelo menos dois dígitos' 
+    user_password_at_leat_two_special_characters: ' deve conter pelo menos dois caracteres especiais'    

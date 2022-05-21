@@ -3,6 +3,7 @@ class LoginController < ApplicationController
   end
 
   def create
+    
     if session[:users].present? && email_and_password_is_valid?
       redirect_to(dashboard_index_path, { flash: { notice: "Login realizado com sucesso!" } } )
     else

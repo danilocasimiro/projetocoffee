@@ -1,0 +1,5 @@
+pt-BR:
+  user:
+    name: 'Nome'
+    email: 'Email'
+    password: 'Senha'

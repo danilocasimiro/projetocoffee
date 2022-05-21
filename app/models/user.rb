@@ -1,23 +1,23 @@
 class User
   include ActiveModel::Model
 
-  attr_accessor :nome, :email, :password
+  attr_accessor :name, :email, :password
 
-  validates_presence_of :nome, :email, message: 'é obrigatório'
-  validates_length_of :nome, in: 5..128, message: 'precisa ter entre 5 à 128 caracteres'
-  validates_length_of :password, in: 10..128, message: 'precisa ter entre 10 à 128 caracteres'
+  validates_presence_of :name, :email, message: I18n.t('errors.is_required')
+  validates_length_of :name, in: 5..128, message: I18n.t('errors.user_name_range')
+  validates_length_of :password, in: 10..128, message: I18n.t('errors.user_password_range')
   validates :email, format: { with: /\A[a-zA-Z0-9_\W]{0,63}@[a-zA-Z0-9.-]*${0,128}\z/,
-    message: 'não é valido' }
+    message: I18n.t('errors.is_not_valid') }
   validate :password_validation
 
   private
 
   def password_validation
     rules = {
-      ' deve conter pelo menos duas letras minúsculas'  => /[a-z]/,
-      ' deve conter pelo menos duas letras maiúsculas'  => /[A-Z]/,
-      ' deve conter pelo menos dois dígitos'            => /[0-9]/,
-      ' deve conter pelo menos dois caracteres especiais' => /\W/
+      I18n.t('errors.user_password_at_leat_two_lowercase')          => /[a-z]/,
+      I18n.t('errors.user_password_at_leat_two_uppercase')          => /[A-Z]/,
+      I18n.t('errors.user_password_at_leat_two_digits')             => /[0-9]/,
+      I18n.t('errors.user_password_at_leat_two_special_characters') => /\W/
     }
 
     rules.each do |message, regex|      

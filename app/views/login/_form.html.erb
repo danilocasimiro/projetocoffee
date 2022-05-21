@@ -1,0 +1,15 @@
+<h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Logar</h3>
+
+<div class="form-outline mb-4">
+  <label class="form-label" for="emailAdress">Endereço de email</label>
+  <%= text_field_tag :email, params[:email], id: 'emailAdress', class: "form-control form-control-lg", required: true %> 
+</div>
+
+<div class="form-outline mb-4">
+  <label class="form-label" for="password">Password</label>
+  <%= password_field_tag :password, params[:password], id: "password", class: "form-control form-control-lg", required: true %>
+</div>
+
+<div class="pt-1 mb-4">
+  <button class="btn btn-info btn-lg btn-block" type="submit" id=login_button>Entrar</button>
+</div>
